@@ -1,0 +1,32 @@
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>Users</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+      <ion-row>
+        <ion-col><ion-input type="text" #userInput placeholder="Enter user name" ></ion-input></ion-col>
+        
+        <ion-col> <button ion-button color="primary" (click)="createUser(userInput)">Add User</button></ion-col>
+      </ion-row>
+        
+     
+      <ion-list *ngFor="let user of users">
+          <ion-item-sliding>
+        <ion-item >
+      user name: {{user.name}}
+        </ion-item>
+        <ion-item-options side="right">
+            <button ion-button color="secondary" (click)="updateUser(user)">Update</button>
+            <button ion-button color="danger" (click)="deleteUser(user)"><ion-icon name="trash"></ion-icon></button>
+          </ion-item-options>
+    </ion-item-sliding>
+        
+      </ion-list>
+    
+    </ion-content>
+    
